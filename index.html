@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>CSE 494 - Fall 2020 - Homework #3</title>
+    <link rel='stylesheet' href='css/styles.css'>
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script src='scripts/homework3.js'></script>
+</head>
+  <body>
+    <div id='wrapper'>
+      <h2>Homework #3: Linking Charts and Adding Interactivity</h2>
+      <h3>Sai Madhuri Molleti- smolleti@asu.edu - 1218593116</h3>
+      <hr style='width:100%'>
+      <h1>GDP per Capita in Africa (1960-2011) </h1>
+      &nbsp;Year:&nbsp;
+      <input id='year-input'  onchange="drawMap();" type='number' min='1960'  max='2011' step ='1' value='2000' />
+      &nbsp;
+     <!-- <script>
+        function getyear()
+        {
+          var year=document.getElementById("year-input").value;
+          //alert(year);
+          drawMap();
+          
+        }
+      </script>-->
+      &nbsp;Color Scale&nbsp;
+      <select id='color-scale-select'  onchange="drawMap();">
+        <option value='interpolateRdYlGn'>interpolateRdYlGn</option>
+        <option value='interpolateViridis'>interpolateViridis</option>
+        <option value='interpolateBrBG'>interpolateBrBG</option>
+         <option value='interpolateCool'>interpolateCool</option>
+          <option value='interpolateTurbo'>interpolateTurbo</option>
+      </select>
+     <!--  <script>
+        function getcolor()
+        {
+          var colorselection = document.getElementById("color-scale-select").value;
+          //alert(colorselection);
+          drawMap();
+        }
+      </script> -->
+      <br/>
+      <svg id='map'>
+      <svg id ="legendSvg"></svg>
+    </svg>
+      <svg id='linechart'></svg>
+      Source: <a href='https://databank.worldbank.org/source/africa-development-indicators' target='_blank'>The World Bank</a>
+    </div>
+  </body>
+</html>
